@@ -33,6 +33,11 @@ Numbers are each project's own measurements unless noted, and most come from sma
 - [Firecrawl safe search](https://github.com/firecrawl/firecrawl/pull/4865) — drop adult results from web search
 - [jev-edge](https://github.com/kiwi0719/jev-edge) — prompt-injection screening at an API gateway
 - [jevc](https://github.com/doronp/jevc) — compile agent rules into narrow questions and a verdict in code
+- [Pi Auto Mode](https://github.com/counterposition/pi/tree/main/packages/pi-auto-mode) — approve routine Pi tool calls automatically, and ask before risky ones
+
+## Benchmarks
+
+- [JevBench](https://github.com/fstandhartinger/jevbench) — an independent benchmark of Jev and open-weights decision models ([live board](https://benchmarkheaven.com/jev-models))
 
 ## Where Jev Lost
 
