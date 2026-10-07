@@ -28,6 +28,60 @@ pi.sendUserMessage(prompt)  ──►  the routed model answers
 
 The routed model **stays selected** after the turn. It's an ordinary model switch, shown in Pi's footer, and the next `/jev` routes again.
 
+## Why it pays
+
+Standard uncached API prices per 1M tokens (USD, checked 2026-10-06):
+
+| Tier | Model | Input | Output |
+|---|---|---:|---:|
+| simple | GPT-6 Luna | $0.10 | $0.50 |
+| standard | GPT-6 Sol | $2.00 | $10.00 |
+| complex | GPT-6 Astra | $10.00 | $50.00 |
+| router | Jev | $0.042 | $0 |
+
+Astra's token rates are 100x Luna's, so sending easy prompts to Luna saves money. The routing decision is fast: across 22 Jev calls inside Pi we measured 108–306 ms (median 198 ms), including the network round trip. `/jev` makes one Jev call per prompt. Our demo uses a ChatGPT subscription, so these API rates are for comparison, not what the demo is billed.
+
+## Pi and its extensions
+
+[Pi](https://pi.dev/) is a minimal, extensible coding agent created by Mario Zechner in 2025 and developed at Earendil since April 2026 (MIT licensed). Its core is small: four default tools (`read`, `bash`, `edit`, `write`). Features such as sub-agents and plan mode are left to extensions.
+
+- **Agent loop:** prompt → model → tool calls → tool results → model → … → answer.
+- **Sessions:** each session is a JSONL file with branching history. `/new` starts a fresh one.
+- **Models:** `/login` connects a subscription or an API key. `/model` switches the model for the next turn, and the footer shows the current one.
+
+An extension is a TypeScript module whose default export receives the Pi API. Pi loads TypeScript directly, so there is no build step:
+
+```typescript
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
+
+export default function (pi: ExtensionAPI) {
+  pi.registerCommand("hello", {
+    handler: async (name, ctx) => {
+      ctx.ui.notify(`Hello, ${name || "world"}!`, "info");
+    },
+  });
+}
+```
+
+Load it for one run with `pi -e ./hello.ts`, or install it in `~/.pi/agent/extensions/` (see **Run it**). The pieces `/jev` uses:
+
+| API | What `/jev` does with it |
+|---|---|
+| `pi.registerCommand("jev", …)` | Adds the slash command; the text after `/jev` is the prompt |
+| `ctx.modelRegistry.find(provider, id)` | Looks up the routed model |
+| `ctx.ui.confirm(…)` | Asks before a mid-session switch |
+| `pi.setModel(model)` | Switches the model |
+| `ctx.ui.notify(…)` | Shows the tier, probability, model, and latency |
+| `pi.sendUserMessage(prompt)` | Sends the prompt to the routed model |
+
+On the Jev side, `client.systemOne(...)` from `@typesafe-ai/sdk` has the same shape as `client.system_one(...)` in the Python SDK.
+
+## Why `/jev` asks before switching
+
+Providers cache a matching conversation prefix and discount later reads of it. A different model can't reuse the current model's cache, so after a mid-session switch it may process the whole history again at uncached rates. Routing on the first prompt of a session avoids this: there is no history to re-read (the Jev call is still billed). Mid-session, `/jev` asks before it switches models. Answer No and nothing changes; re-run the prompt after `/new`. Route at the start of a task, not in the middle of one.
+
+Why Jev and not an LLM router? An LLM router is another generation call before every routed prompt: more latency and more tokens. Jev returns a typed label from a fixed set of tiers, with a calibrated probability, in about 200 ms, and bills input tokens only. Code then maps each tier to a model.
+
 ## Prerequisites
 
 - **Pi**, tested with version 1.0.2:
