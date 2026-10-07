@@ -1,6 +1,6 @@
 # Jev: Introduction to System 1 AI — Course Resources
 
-Companion starter code, exercises, benchmarks, and custom extensions for the **Jev: Introduction to System 1 AI** course by [ZazenCodes](https://www.youtube.com/@ZazenCodes) — teaching how to use fast, non-autoregressive decision models in AI agents.
+Companion starter code, exercises, benchmarks, and custom extensions for the **Jev: Introduction to System 1 AI** course by [ZazenCodes](https://zazencodes.com/) — teaching how to use fast, non-autoregressive decision models in AI agents.
 
 Stop using heavy LLMs for simple agent routing, guardrails, and intent classification. Learn how to combine fast "System 1" reflexes with deep "System 2" reasoning models.
 
@@ -8,8 +8,8 @@ Stop using heavy LLMs for simple agent routing, guardrails, and intent classific
 
 ## Get the Course
 
+- **One-time purchase:** <https://zazencodes.com/courses/system-one-ai-with-jev>
 - **Skool — ZazenCodes Agentic Coding Club (Premium):** Included with membership alongside the full course catalogue, agent skills, and weekly code-with-me sessions — <https://www.skool.com/zazencodes-agentic-coding-club-7823>
-- **One-time purchase:** <https://zazencodes.com>
 
 ---
 
@@ -34,8 +34,8 @@ You need [uv](https://docs.astral.sh/uv/getting-started/installation/) and a Typ
 
 ### 1. Clone and Install
 ```bash
-git clone https://github.com/zazencodes/system-one-ai-with-jev-course.git
-cd system-one-ai-with-jev-course
+git clone https://github.com/zazencodes/system-one-ai-with-jev.git
+cd system-one-ai-with-jev
 uv sync
 ```
 
@@ -89,3 +89,15 @@ Then follow [`06-custom-pi-model-router/README.md`](./06-custom-pi-model-router/
 ## License
 
 Resources and sample code are released under the [MIT License](./LICENSE). Build with them, modify them, and use them in your own agent systems.
+
+<p align="center">
+  <a href="https://zazencodes.com/courses/system-one-ai-with-jev?utm_source=github&utm_medium=referral&utm_campaign=system-one-ai-with-jev">
+    <img
+      src="docs/assets/zazencodes-banner.png"
+      alt="ZazenCodes — Engineering for the Agentic Era"
+      width="100%"
+    >
+  </a>
+  <br>
+  Created by <a href="https://zazencodes.com/">ZazenCodes</a>
+</p>
