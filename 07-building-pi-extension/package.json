@@ -1,0 +1,9 @@
+{
+  "name": "jev-agent-router",
+  "version": "1.0.0",
+  "description": "Pi extension: a Jev safety shield for bash commands and a Jev persona router for prompts",
+  "type": "module",
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0"
+  }
+}

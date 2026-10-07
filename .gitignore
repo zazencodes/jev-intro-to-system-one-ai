@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+node_modules/
+dist/
+.DS_Store
+.env
+*.log
+05-implementing-use-cases/data/

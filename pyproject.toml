@@ -1,0 +1,15 @@
+[project]
+name = "system-one-ai-with-jev-course"
+version = "0.1.0"
+description = "Code for the Jev: Introduction to System 1 AI course by ZazenCodes."
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic",
+    "datasets>=5.1.0",
+    "jupyterlab",
+    "openai",
+    "pandas>=3.0.6",
+    "pydantic",
+    "textworld>=1.7.0",
+    "typesafe-sdk",
+]
