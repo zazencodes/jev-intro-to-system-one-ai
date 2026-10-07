@@ -1,19 +1,19 @@
 # Lesson 05 — Jev Use Cases in Code
 
-One notebook, `05_use_cases.ipynb`, with one worked example for each category from Lesson 04, run on real data:
+One notebook, `05_use_cases.ipynb`, with one worked example for each category from Lesson 04, using public datasets and generated games:
 
 | Section | Example | Data | Jev questions |
 |---|---|---|---|
-| 1. AI-powered workflows | Route support tickets; escalate the unsure ones to GPT-6 Luna | 500 messages from the [Bitext customer support dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset) (CDLA-Sharing-1.0) | `Choice` queue + `Noul` status request |
+| 1. AI-powered workflows | Route support tickets; escalate the unsure ones to GPT-6 Luna | 500 synthetic messages from the [Bitext customer support dataset](https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset) (CDLA-Sharing-1.0) | `Choice` queue + `Noul` status request |
 | 2. Map-reducing big data | Label every commit, then count and filter | The full git history of [`psf/requests`](https://github.com/psf/requests) (~4,900 commits) | `Choice` kind of change + `Noul` security fix |
 | 3. Real-time applications | Jev plays text adventure games, one action per turn | 10 [TextWorld](https://github.com/microsoft/TextWorld) cooking games, generated locally (MIT) | `Choice` over the game's commands |
 | 4. Verify everything | Check scientific claims against abstracts | 340 claim–abstract pairs from [SciFact](https://github.com/allenai/scifact) (CC BY 4.0 / ODC-By 1.0) | `Choice` supports / contradicts / says nothing |
 
-Each section measures what Jev gets right against the labels, how a confidence threshold trades automation for accuracy, and the latency and cost from the API's reported usage.
+Tickets and claim–abstract pairs use gold labels to evaluate accuracy and confidence thresholds. Git history uses candidate spot checks without gold labels; games measure wins and decision latency. All four report cost from API token usage. Recorded slide results can differ from live runs.
 
 ## Run
 
-Needs `TYPESAFE_API_KEY`, plus `OPENAI_API_KEY` for section 1's escalation step. Export both, then from the repo root:
+Needs `TYPESAFE_API_KEY`, plus `OPENAI_API_KEY` for section 1's escalation step. Follow **Setup** in the root `README.md` to install dependencies and populate `.env`. The first code cell loads the keys. From the repo root:
 
 ```bash
 uv run jupyter lab
