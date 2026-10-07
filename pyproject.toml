@@ -1,5 +1,5 @@
 [project]
-name = "system-one-ai-with-jev-course"
+name = "system-one-ai-with-jev"
 version = "0.1.0"
 description = "Code for the Jev: Introduction to System 1 AI course by ZazenCodes."
 requires-python = ">=3.12"
