@@ -1,0 +1,15 @@
+{
+  "name": "jev-model-router",
+  "version": "1.0.0",
+  "description": "Pi extension: /jev <prompt> lets Jev pick the model for one prompt",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0"
+  },
+  "pi": {
+    "extensions": [
+      "./jev-model-router.ts"
+    ]
+  }
+}
