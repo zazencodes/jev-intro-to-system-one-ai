@@ -1169,6 +1169,41 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f5/07/9e5bceec4ca0635fb18fce32bd9daf408d0deb5e07b165fe8c2aac875a3f/jericho-3.3.1.tar.gz", hash = "sha256:032dde60a155dd9984d6db05b2c6ac22897446fb13a6a248cff8086001185571", size = 1389874, upload-time = "2025-11-11T13:16:34.637Z" }
 
 [[package]]
+name = "jev-intro-to-decision-models"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "anthropic" },
+    { name = "datasets" },
+    { name = "jupyterlab" },
+    { name = "openai" },
+    { name = "pandas" },
+    { name = "pydantic" },
+    { name = "python-dotenv" },
+    { name = "typesafe-sdk" },
+]
+
+[package.dev-dependencies]
+lesson-05 = [
+    { name = "textworld" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "anthropic" },
+    { name = "datasets", specifier = ">=5.1.0" },
+    { name = "jupyterlab" },
+    { name = "openai" },
+    { name = "pandas", specifier = ">=3.0.6" },
+    { name = "pydantic" },
+    { name = "python-dotenv", specifier = ">=1.2.4" },
+    { name = "typesafe-sdk" },
+]
+
+[package.metadata.requires-dev]
+lesson-05 = [{ name = "textworld", specifier = ">=1.7.0" }]
+
+[[package]]
 name = "jinja2"
 version = "3.1.6"
 source = { registry = "https://pypi.org/simple" }
@@ -3055,41 +3090,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/28/e3/55dcc2cfbc3ca9c29
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f1/7b/ce1eafaf1a76852e2ec9b22edecf1daa58175c090266e9f6c64afcd81d91/stack_data-0.6.3-py3-none-any.whl", hash = "sha256:d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695", size = 24521, upload-time = "2023-09-30T13:58:03.53Z" },
 ]
-
-[[package]]
-name = "system-one-ai-with-jev"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "anthropic" },
-    { name = "datasets" },
-    { name = "jupyterlab" },
-    { name = "openai" },
-    { name = "pandas" },
-    { name = "pydantic" },
-    { name = "python-dotenv" },
-    { name = "typesafe-sdk" },
-]
-
-[package.dev-dependencies]
-lesson-05 = [
-    { name = "textworld" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "anthropic" },
-    { name = "datasets", specifier = ">=5.1.0" },
-    { name = "jupyterlab" },
-    { name = "openai" },
-    { name = "pandas", specifier = ">=3.0.6" },
-    { name = "pydantic" },
-    { name = "python-dotenv", specifier = ">=1.2.4" },
-    { name = "typesafe-sdk" },
-]
-
-[package.metadata.requires-dev]
-lesson-05 = [{ name = "textworld", specifier = ">=1.7.0" }]
 
 [[package]]
 name = "tatsu"
