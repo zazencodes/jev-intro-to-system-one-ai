@@ -3068,8 +3068,12 @@ dependencies = [
     { name = "pandas" },
     { name = "pydantic" },
     { name = "python-dotenv" },
-    { name = "textworld" },
     { name = "typesafe-sdk" },
+]
+
+[package.dev-dependencies]
+lesson-05 = [
+    { name = "textworld" },
 ]
 
 [package.metadata]
@@ -3081,9 +3085,11 @@ requires-dist = [
     { name = "pandas", specifier = ">=3.0.6" },
     { name = "pydantic" },
     { name = "python-dotenv", specifier = ">=1.2.4" },
-    { name = "textworld", specifier = ">=1.7.0" },
     { name = "typesafe-sdk" },
 ]
+
+[package.metadata.requires-dev]
+lesson-05 = [{ name = "textworld", specifier = ">=1.7.0" }]
 
 [[package]]
 name = "tatsu"

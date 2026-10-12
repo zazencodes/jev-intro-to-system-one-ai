@@ -13,7 +13,13 @@ Tickets and claim–abstract pairs use gold labels to evaluate accuracy and conf
 
 ## Run
 
-Needs `TYPESAFE_API_KEY`, plus `OPENAI_API_KEY` for section 1's escalation step. Follow **Setup** in the root `README.md` to install dependencies and populate `.env`. The first code cell loads the keys. From the repo root:
+Needs `TYPESAFE_API_KEY`, plus `OPENAI_API_KEY` for section 1's escalation step, and Git for section 2. Follow **Setup** in the root `README.md` to install dependencies and populate `.env`. Section 3 also needs TextWorld, installed separately:
+
+```bash
+uv sync --group lesson-05
+```
+
+The first code cell loads the keys. From the repo root:
 
 ```bash
 uv run jupyter lab

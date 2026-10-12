@@ -2,8 +2,6 @@
 
 Companion starter code, exercises, benchmarks, and custom extensions for the **Jev: Introduction to System 1 AI** course by [ZazenCodes](https://zazencodes.com/) — teaching how to use fast, non-autoregressive decision models in AI agents.
 
-Stop using heavy LLMs for simple agent routing, guardrails, and intent classification. Learn how to combine fast "System 1" reflexes with deep "System 2" reasoning models.
-
 ---
 
 ## Get the Course
@@ -30,7 +28,7 @@ Each directory holds the resources for one lesson:
 
 ## Setup
 
-You need [uv](https://docs.astral.sh/uv/getting-started/installation/) and a TypeSafe API key from <https://console.typesafe.ai/keys>. The benchmark at the end of the Lesson 03 notebook also needs OpenAI and Anthropic API keys, and the Lesson 05 notebook needs an OpenAI key. Lesson 05's text games use [TextWorld](https://github.com/microsoft/TextWorld), which supports macOS and Linux only (on Windows, TextWorld suggests Docker).
+You need [uv](https://docs.astral.sh/uv/getting-started/installation/) and a TypeSafe API key from <https://console.typesafe.ai/keys>. The benchmark at the end of the Lesson 03 notebook also needs OpenAI and Anthropic API keys, and the Lesson 05 notebook needs an OpenAI key and Git.
 
 ### 1. Clone and Install
 ```bash
@@ -39,7 +37,17 @@ cd system-one-ai-with-jev
 uv sync
 ```
 
-`uv sync` installs the notebook dependencies, including `python-dotenv` for loading API keys.
+`uv sync` installs the dependencies for every notebook except section 3 of Lesson 05.
+
+#### Lesson 05 extra: TextWorld
+
+Section 3 of the Lesson 05 notebook plays text games with [TextWorld](https://github.com/microsoft/TextWorld). It supports macOS and Linux only (on Windows, TextWorld suggests Docker) and ships prebuilt wheels for x86_64 only, so on Apple Silicon or ARM Linux it builds from source. Install it with:
+
+```bash
+uv sync --group lesson-05
+```
+
+A later plain `uv sync` removes it again; `uv run` leaves it in place.
 
 ### 2. Populate `.env`
 

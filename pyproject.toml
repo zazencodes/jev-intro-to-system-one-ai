@@ -11,6 +11,10 @@ dependencies = [
     "pandas>=3.0.6",
     "pydantic",
     "python-dotenv>=1.2.4",
-    "textworld>=1.7.0",
     "typesafe-sdk",
+]
+
+[dependency-groups]
+lesson-05 = [
+    "textworld>=1.7.0",
 ]
