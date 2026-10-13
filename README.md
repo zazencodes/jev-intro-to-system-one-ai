@@ -61,7 +61,7 @@ Then open the lesson's notebook, starting with `03-three-primitives/03_primitive
 > **Alternative: Neovim Notebooks.** In the course videos I open the notebooks with [Neovim Notebooks](https://github.com/zazencodes/neovim-notebooks) (`nvb`), my open-source tool for running Jupyter notebooks in Neovim 0.12 or newer. Install it with:
 >
 > ```bash
-> cargo install --git https://github.com/zazencodes/neovim-notebooks --tag v0.1.1 nbv-cli
+> cargo install nvb
 > ```
 >
 > Then, from the repository root, open a notebook:
