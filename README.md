@@ -2,29 +2,22 @@
 
 Companion starter code, exercises, benchmarks, and custom extensions for the **Jev: Introduction to Decision Models** course by [ZazenCodes](https://zazencodes.com/) — teaching how to use fast, non-autoregressive decision models in AI agents.
 
----
-
 ## Get the Course
 
 - **One-time purchase:** <https://zazencodes.com/courses/jev-intro-to-decision-models>
 - **Skool — ZazenCodes Agentic Coding Club (Premium):** Included with membership alongside the full course catalogue, agent skills, and weekly code-with-me sessions — <https://www.skool.com/zazencodes-agentic-coding-club-7823>
 
----
-
 ## Course Roadmap & Repository Layout
 
-Each directory holds the resources for one lesson:
+Lessons with code each have a directory:
 
 | Directory | What it is | Lesson |
 |---|---|---|
-| [`02-what-is-jev/`](./02-what-is-jev) | Primary sources on TypeSafe, RLCD training, and what is known about Jev | Lesson 02 |
 | [`03-three-primitives/`](./03-three-primitives) | Notebook: Jev's `Noul`, `Choice`, and `Score` primitives, plus a latency and cost benchmark against GPT-6 Sol and Claude Opus 5.5 | Lesson 03 |
-| [`04-jev-use-cases/`](./04-jev-use-cases) | Catalog of public Jev projects in four categories: workflows, map-reduce, real-time, and verification | Lesson 04 |
 | [`05-implementing-use-cases/`](./05-implementing-use-cases) | Notebook: one worked example per category using public datasets and generated games | Lesson 05 |
 | [`06-custom-pi-model-router/`](./06-custom-pi-model-router) | Live build of a `/jev` slash command for the Pi coding agent: Jev picks the model for a prompt. Build prompt and reference solution | Lesson 06 |
-| [`07-jev-in-the-wild/`](./07-jev-in-the-wild) | Real Jev projects shown in the final lesson, with links | Lesson 07 |
 
----
+Links from the other lessons (primary sources, the use-case catalog, and the projects shown in Lesson 07) are in [`LINKS.md`](./LINKS.md).
 
 ## Setup
 
@@ -37,17 +30,7 @@ cd jev-intro-to-decision-models
 uv sync
 ```
 
-`uv sync` installs the dependencies for every notebook except section 3 of Lesson 05.
-
-#### Lesson 05 extra: TextWorld
-
-Section 3 of the Lesson 05 notebook plays text games with [TextWorld](https://github.com/microsoft/TextWorld). It supports macOS and Linux only (on Windows, TextWorld suggests Docker) and ships prebuilt wheels for x86_64 only, so on Apple Silicon or ARM Linux it builds from source. Install it with:
-
-```bash
-uv sync --group lesson-05
-```
-
-A later plain `uv sync` removes it again; `uv run` leaves it in place.
+Section 3 of Lesson 05 also needs [TextWorld](https://github.com/microsoft/TextWorld) (macOS and Linux only). Install it with `uv sync --group lesson-05`; a later plain `uv sync` removes it again.
 
 ### 2. Populate `.env`
 
@@ -65,9 +48,7 @@ OPENAI_API_KEY=your_openai_key
 ANTHROPIC_API_KEY=your_anthropic_key
 ```
 
-`TYPESAFE_API_KEY` is required for both notebooks. Lesson 05 also needs `OPENAI_API_KEY`; Lesson 03's final benchmark needs both OpenAI and Anthropic keys. `.env` is ignored by Git.
-
-Both notebooks call `load_dotenv` in their first code cell to load this file. Notebook kernels start in their lesson folders, so the file path is `../.env`. Values in this file override existing shell variables.
+`.env` is ignored by Git.
 
 ### 3. Open the Notebooks
 From the repository root:
@@ -75,6 +56,19 @@ From the repository root:
 uv run jupyter lab
 ```
 Then open the lesson's notebook, starting with `03-three-primitives/03_primitives_demo.ipynb`.
+
+> [!TIP]
+> **Alternative: Neovim Notebooks.** In the course videos I open the notebooks with [Neovim Notebooks](https://github.com/zazencodes/neovim-notebooks) (`nvb`), my open-source tool for running Jupyter notebooks in Neovim 0.12 or newer. Install it with:
+>
+> ```bash
+> cargo install --git https://github.com/zazencodes/neovim-notebooks --tag v0.1.1 nbv-cli
+> ```
+>
+> Then, from the repository root, open a notebook:
+>
+> ```bash
+> nvb 03-three-primitives/03_primitives_demo.ipynb
+> ```
 
 ### 4. Set Up Pi (Lesson 06)
 
@@ -92,11 +86,9 @@ export TYPESAFE_API_KEY=your_typesafe_key
 
 Then follow [`06-custom-pi-model-router/README.md`](./06-custom-pi-model-router/README.md).
 
----
-
 ## License
 
-Resources and sample code are released under the [MIT License](./LICENSE). Build with them, modify them, and use them in your own agent systems.
+Resources and sample code are released under the [MIT License](./LICENSE).
 
 <p align="center">
   <a href="https://zazencodes.com/courses/jev-intro-to-decision-models?utm_source=github&utm_medium=referral&utm_campaign=jev-intro-to-decision-models">

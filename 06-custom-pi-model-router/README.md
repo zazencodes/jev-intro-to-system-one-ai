@@ -63,7 +63,7 @@ export default function (pi: ExtensionAPI) {
 }
 ```
 
-Load it for one run with `pi -e ./hello.ts`, or install it in `~/.pi/agent/extensions/` (see **Run it**). The pieces `/jev` uses:
+Load it for one run with `pi -e ./hello.ts`, or install it as a Pi package with `pi install` (see **Run it**). The pieces `/jev` uses:
 
 | API | What `/jev` does with it |
 |---|---|
@@ -88,7 +88,6 @@ Why Jev and not an LLM router? An LLM router is another generation call before e
   ```bash
   curl -fsSL https://pi.dev/install.sh | sh
   ```
-  or `npm install -g --ignore-scripts @earendil-works/pi-coding-agent` (Node.js 22.19+). Check with `pi --version`.
 - **Node.js and npm** for the extension's one dependency, the TypeSafe SDK.
 - **A model provider.** We use the `openai-codex` provider (a ChatGPT subscription, `/login` in Pi) with GPT-6 Luna, Sol, and Astra. Any other provider works: edit the `MODELS` map.
 - **`TYPESAFE_API_KEY` exported in your shell before you start Pi.** The extension reads it from the environment. Get a key at <https://console.typesafe.ai/keys>.
@@ -149,15 +148,13 @@ pi -e ./jev-model-router.ts
 
 If `/jev` is sent to the model as plain text instead of showing a `Jev: …` notification, the extension isn't loaded.
 
-**Install it permanently.** Pi loads extension folders whose `package.json` names the entry file. Add that, copy the folder (with its `node_modules`) into Pi's extensions directory, and reload:
+**Install it permanently.** The finished extension is published as a Pi package at [zazencodes/pi-jev-model-router](https://github.com/zazencodes/pi-jev-model-router). Install it from source with:
 
 ```bash
-npm pkg set "pi.extensions[0]=./jev-model-router.ts"
-mkdir -p ~/.pi/agent/extensions
-cp -R . ~/.pi/agent/extensions/jev-model-router
+pi install git:github.com/zazencodes/pi-jev-model-router
 ```
 
-Then run `/reload` in Pi (or restart it). To load it for one project only, copy the folder to that project's `.pi/extensions/jev-model-router/` instead.
+Pi clones the repository and installs its dependency. Then run `/reload` in Pi (or restart it). Add `-l` to install it for the current project only. The published version also lets Jev pick the thinking level for each prompt.
 
 ## Try it
 
