@@ -1,10 +1,10 @@
-# Jev: Introduction to Decision Models — Course Resources
+# Jev: Introduction to System 1 AI — Course Resources
 
-Companion starter code, exercises, benchmarks, and custom extensions for the **Jev: Introduction to Decision Models** course by [ZazenCodes](https://zazencodes.com/) — teaching how to use fast, non-autoregressive decision models in AI agents.
+Companion starter code, exercises, benchmarks, and custom extensions for the **Jev: Introduction to System 1 AI** course by [ZazenCodes](https://zazencodes.com/) — teaching how to use fast, non-autoregressive decision models in AI agents.
 
 ## Get the Course
 
-- **One-time purchase:** <https://zazencodes.com/courses/jev-intro-to-decision-models>
+- **One-time purchase:** <https://zazencodes.com/courses/jev-intro-to-system-one-ai>
 - **Skool — ZazenCodes Agentic Coding Club (Premium):** Included with membership alongside the full course catalogue, agent skills, and weekly code-with-me sessions — <https://www.skool.com/zazencodes-agentic-coding-club-7823>
 
 ## Course Roadmap & Repository Layout
@@ -25,8 +25,8 @@ You need [uv](https://docs.astral.sh/uv/getting-started/installation/) and a Typ
 
 ### 1. Clone and Install
 ```bash
-git clone https://github.com/zazencodes/jev-intro-to-decision-models.git
-cd jev-intro-to-decision-models
+git clone https://github.com/zazencodes/jev-intro-to-system-one-ai.git
+cd jev-intro-to-system-one-ai
 uv sync
 ```
 
@@ -91,7 +91,7 @@ Then follow [`06-custom-pi-model-router/README.md`](./06-custom-pi-model-router/
 Resources and sample code are released under the [MIT License](./LICENSE).
 
 <p align="center">
-  <a href="https://zazencodes.com/courses/jev-intro-to-decision-models?utm_source=github&utm_medium=referral&utm_campaign=jev-intro-to-decision-models">
+  <a href="https://zazencodes.com/courses/jev-intro-to-system-one-ai?utm_source=github&utm_medium=referral&utm_campaign=jev-intro-to-system-one-ai">
     <img
       src="docs/assets/zazencodes-banner.png"
       alt="ZazenCodes — Engineering for the Agentic Era"

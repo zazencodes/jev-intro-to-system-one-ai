@@ -1,7 +1,7 @@
 [project]
-name = "jev-intro-to-decision-models"
+name = "jev-intro-to-system-one-ai"
 version = "0.1.0"
-description = "Code for the Jev: Introduction to Decision Models course by ZazenCodes."
+description = "Code for the Jev: Introduction to System 1 AI course by ZazenCodes."
 requires-python = ">=3.12"
 dependencies = [
     "anthropic",

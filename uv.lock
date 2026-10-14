@@ -1169,7 +1169,7 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f5/07/9e5bceec4ca0635fb18fce32bd9daf408d0deb5e07b165fe8c2aac875a3f/jericho-3.3.1.tar.gz", hash = "sha256:032dde60a155dd9984d6db05b2c6ac22897446fb13a6a248cff8086001185571", size = 1389874, upload-time = "2025-11-11T13:16:34.637Z" }
 
 [[package]]
-name = "jev-intro-to-decision-models"
+name = "jev-intro-to-system-one-ai"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
